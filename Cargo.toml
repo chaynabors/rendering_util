@@ -1,9 +1,10 @@
 [package]
 name = "rendering_util"
 version = "0.1.0"
+authors = ["Chay Nabors"]
 edition = "2021"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+description = "Some simple utils for wgpu code."
+resolver = "2"
 
 [dependencies]
 log = "0.4.14"
