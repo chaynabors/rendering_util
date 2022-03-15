@@ -13,6 +13,7 @@ use wgpu::RequestAdapterOptions;
 use wgpu::Surface;
 use wgpu::SurfaceConfiguration;
 use wgpu::SurfaceError;
+use wgpu::TextureFormat;
 use wgpu::TextureUsages;
 use wgpu::TextureView;
 use wgpu::TextureViewDescriptor;
@@ -88,6 +89,10 @@ impl RenderingContext {
 
     pub fn height(&self) -> u32 {
         self.surface_conf.height
+    }
+
+    pub fn surface_format(&self) -> TextureFormat {
+        self.surface_conf.format
     }
 
     pub fn render<F>(&mut self, width: u32, height: u32, mut handler: F) -> Result<(), Error> where
