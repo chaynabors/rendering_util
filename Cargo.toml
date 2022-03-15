@@ -1,6 +1,6 @@
 [package]
 name = "rendering_util"
-version = "0.1.1"
+version = "0.1.2"
 authors = ["Chay Nabors"]
 edition = "2021"
 description = "Some simple utils for wgpu code."

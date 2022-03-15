@@ -96,7 +96,7 @@ impl RenderingContext {
     }
 
     pub fn render<F>(&mut self, width: u32, height: u32, mut handler: F) -> Result<(), Error> where
-        F: FnMut(&Device, &TextureView),
+        F: FnMut(&Self, &TextureView),
     {
         if width == 0 || height == 0 { return Ok(()); }
 
@@ -128,7 +128,7 @@ impl RenderingContext {
         let surface_view = surface.texture.create_view(&TextureViewDescriptor::default());
 
         // Call user function
-        handler(&self.device, &surface_view);
+        handler(&self, &surface_view);
 
         // Finish
         surface.present();
