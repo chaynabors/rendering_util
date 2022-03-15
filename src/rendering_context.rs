@@ -24,8 +24,8 @@ pub struct RenderingContext {
     instance: Instance,
     surface: Surface,
     adapter: Adapter,
-    device: Device,
-    queue: Queue,
+    pub device: Device,
+    pub queue: Queue,
     surface_conf: SurfaceConfiguration,
 }
 
@@ -80,6 +80,14 @@ impl RenderingContext {
             queue,
             surface_conf,
         })
+    }
+
+    pub fn width(&self) -> u32 {
+        self.surface_conf.width
+    }
+
+    pub fn height(&self) -> u32 {
+        self.surface_conf.height
     }
 
     pub fn render<F>(&mut self, width: u32, height: u32, mut handler: F) -> Result<(), Error> where
